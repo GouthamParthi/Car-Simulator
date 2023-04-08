@@ -35,14 +35,6 @@
           "positionY": "1",
           "speed": "2",
           "direction": "backwards"
-        },
-        {
-          "id": 3,
-          "vehicleName": "Car",
-          "positionX": "100",
-          "positionY": "100",
-          "speed": "20",
-          "direction": "upwards"
         }
       ]
     },
@@ -60,36 +52,12 @@
           "direction": "towards"
         },
         {
-          "id": 2,
-          "vehicleName": "Car",
-          "positionX": "220",
-          "positionY": "250",
-          "speed": "5",
-          "direction": "upwards"
-        },
-        {
           "id": 3,
           "vehicleName": "Car",
           "positionX": "300",
           "positionY": "200",
-          "speed": "2",
+          "speed": "10",
           "direction": "towards"
-        },
-        {
-          "id": 4,
-          "vehicleName": "Car",
-          "positionX": "5",
-          "positionY": "20",
-          "speed": "5",
-          "direction": "backwards"
-        },
-        {
-          "id": 5,
-          "vehicleName": "Car",
-          "positionX": "480",
-          "positionY": "280",
-          "speed": "20",
-          "direction": "downwards"
         }
       ]
     },

@@ -61,7 +61,17 @@ function Home() {
     await addVehicle(scenarioId, { vehicles: individualEdit });
     const getRes = await getScenario();
     setScenariosList(getRes);
-    setSelectedScenario(getRes[0]);
+    setSelectedScenario(getRes[seletedScenario.id - 1]);
+  };
+  const handelDeleteVehicle = async (vehicleId) => {
+    const individualDelete = seletedScenario.vehicles.filter((vehicle) => {
+      return vehicle.id !== vehicleId;
+    });
+    let scenarioId = seletedScenario.id;
+    await addVehicle(scenarioId, { vehicles: individualDelete });
+    const getRes = await getScenario();
+    setScenariosList(getRes);
+    setSelectedScenario(getRes[seletedScenario.id - 1]);
   };
   useEffect(() => {
     const handleapi = async () => {
@@ -93,6 +103,7 @@ function Home() {
             handleSave={handleSave}
             handleInputChange={handleInputChange}
             handleEdit={handleEdit}
+            handleDelete={handelDeleteVehicle}
           />
         ) : null}
         <div className={styles.controlButtons}>
