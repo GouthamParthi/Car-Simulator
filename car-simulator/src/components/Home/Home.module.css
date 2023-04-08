@@ -1,0 +1,8 @@
+.header {
+  font-size: 20px;
+}
+.controlButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}

@@ -1,0 +1,22 @@
+.selection {
+  width: 200px;
+  height: 40px;
+  padding-left: 30px;
+  font-size: 17px;
+  border-radius: 7px;
+  color: var(--color-fontColor);
+  background-color: var(--color-primary);
+  appearance: none;
+  background-image: url("../../assets/chevronDown.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 30px auto;
+}
+.selection:focus {
+  outline: 2px solid var(--color-skyBlue);
+}
+select > option {
+  position: absolute;
+  background-color: var(--color-primary);
+  height: 40px;
+}

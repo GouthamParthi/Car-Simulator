@@ -1,0 +1,53 @@
+.oneOfTheVehicles {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: var(--color-blue);
+  text-align: center;
+  position: absolute;
+  z-index: 5;
+  animation-iteration-count: infinite;
+  /* transition: transform var(--timing); */
+}
+.simulationplay {
+  animation-play-state: var(--simulation);
+}
+.vehicles div:nth-child(odd) {
+  background-color: var(--color-red);
+}
+/* .oneOfTheVehicles:hover {
+  transform: translate(100px, 10px);
+} */
+.downwards {
+  animation-name: downwards;
+}
+.upwards {
+  animation-name: upwards;
+}
+.towards {
+  animation-name: towards;
+}
+.backwards {
+  animation-name: backwards;
+}
+
+@keyframes downwards {
+  100% {
+    transform: translateY(1000px);
+  }
+}
+@keyframes upwards {
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+@keyframes towards {
+  100% {
+    transform: translateX(1000px);
+  }
+}
+@keyframes backwards {
+  100% {
+    transform: translateX(-1000px);
+  }
+}

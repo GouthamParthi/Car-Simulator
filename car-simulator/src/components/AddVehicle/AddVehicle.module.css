@@ -1,0 +1,43 @@
+.header {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.title {
+  font-size: 22px;
+  margin: 15px 0px;
+}
+.controlButtons {
+  display: flex;
+  gap: 8px;
+}
+.addVehicleForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--color-greyShade);
+  padding: 20px;
+}
+.textField {
+  width: 200px;
+  height: 40px;
+  padding-left: 30px;
+  color: var(--color-white);
+  background-color: var(--color-greyShade);
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+}
+.textField:focus {
+  outline: 2px solid var(--color-skyBlue);
+}
+.error {
+  color: RGB(208 13 13);
+  outline: 2px solid RGB(208 13 13);
+}
+.error:focus {
+  outline: 2px solid RGB(208 13 13);
+}
+.formArrangement {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

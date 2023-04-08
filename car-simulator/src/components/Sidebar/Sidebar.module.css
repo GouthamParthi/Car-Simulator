@@ -1,0 +1,30 @@
+.sideBar {
+  width: 220px;
+  height: 100vh;
+  background-color: var(--color-dullWhiteSideBar);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 100px;
+  position: fixed;
+}
+.button {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  background: transparent;
+  font-size: 23px;
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-left: 15px solid var(--color-dullWhiteSideBar);
+}
+.link {
+  text-decoration: none;
+}
+.active {
+  color: var(--color-skyBlue);
+  background-color: var(--color-tableBodyBackground);
+  border-left: 15px solid var(--color-tableBodyBackground);
+}

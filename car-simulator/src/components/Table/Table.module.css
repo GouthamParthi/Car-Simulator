@@ -1,0 +1,36 @@
+.container {
+  padding-top: 30px;
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--color-black);
+}
+.header {
+  background-color: var(--color-greyShade);
+  color: var(--color-fontColor);
+  font-size: 20px;
+}
+.tableBody {
+  background-color: var(--color-tableBodyBackground);
+}
+.header,
+.tableBodydata {
+  text-align: center;
+  padding: 8px;
+}
+.tableBodydata {
+  font-size: 17px;
+  font-weight: 500;
+}
+.tableBody tr {
+  border-bottom: 1px solid var(--color-black);
+}
+.buttons {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.input {
+  font-size: 12px;
+}

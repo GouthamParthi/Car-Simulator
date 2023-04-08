@@ -1,0 +1,12 @@
+.appLayout {
+  display: flex;
+  color: var(--color-white);
+}
+.children {
+  background-color: var(--color-darkGreyBackground);
+  width: 100%;
+  min-height: 100vh;
+  margin-left: 220px;
+  padding: 70px;
+  padding-top: 20px;
+}
