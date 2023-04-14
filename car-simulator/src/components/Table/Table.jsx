@@ -120,13 +120,13 @@ function Table({
               ))}
             </tbody>
           ) : (
-            <tr
+            <tbody
               style={{ color: "var(--color-white)", textAlign: "center" }}
               colspan="2"
               className={styles.nodata}
             >
               No {name} to show
-            </tr>
+            </tbody>
           )}
         </table>
       </div>

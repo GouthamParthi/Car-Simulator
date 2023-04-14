@@ -1,18 +1,16 @@
 import React from "react";
 import styles from "./Vehicles.module.css";
 function Vehicles({ seletedScenario, simulationPlayState }) {
-  const animationDuration = [];
-  for (let i = 20; i >= 1; i--) {
-    animationDuration.push(i);
-  }
+  let timeout;
 
   if (simulationPlayState === true) {
     document.documentElement.style.setProperty("--simulation", `running`);
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       document.documentElement.style.setProperty("--simulation", `paused`);
     }, seletedScenario.scenarioTime * 1000);
   } else {
     document.documentElement.style.setProperty("--simulation", `paused`);
+    clearTimeout(timeout);
   }
   return (
     <div className={styles.vehicles}>
@@ -31,9 +29,7 @@ function Vehicles({ seletedScenario, simulationPlayState }) {
                     vehicle.positionX <= 950 ? vehicle.positionX : 950
                   }px ${vehicle.positionY <= 425 ? vehicle.positionY : 425}px`,
                   animationDuration: `${
-                    animationDuration[vehicle.speed]
-                      ? animationDuration[vehicle.speed - 1]
-                      : 20
+                    vehicle.speed <= 30 ? 30 - vehicle.speed + 1 : 1
                   }s`,
                 }}
               >
