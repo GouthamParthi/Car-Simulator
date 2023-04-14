@@ -9,11 +9,13 @@ function PlayGround({ seletedScenario, simulationPlayState }) {
           simulationPlayState={simulationPlayState}
         />
       ) : null}
-      <div class={styles.verticalLines}>
+      <div className={styles.verticalLines}>
         {(() => {
           let verticalLines = [];
           for (let i = 0; i < 17; i++) {
-            verticalLines.push(<div class={styles.verticalLine} key={i}></div>);
+            verticalLines.push(
+              <div className={styles.verticalLine} key={i}></div>
+            );
           }
           return verticalLines;
         })()}
@@ -24,7 +26,7 @@ function PlayGround({ seletedScenario, simulationPlayState }) {
           for (let i = 0; i < 9; i++) {
             horizontalLines.push(
               <div
-                class={styles.horizontalLine}
+                className={styles.horizontalLine}
                 style={{ top: `${i * 56.1}px` }}
                 key={i}
               ></div>

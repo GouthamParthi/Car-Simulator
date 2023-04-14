@@ -5,6 +5,7 @@
   border-collapse: collapse;
   width: 100%;
   color: var(--color-black);
+  text-align: center;
 }
 .header {
   background-color: var(--color-greyShade);
@@ -33,4 +34,9 @@
 }
 .input {
   font-size: 12px;
+}
+.nodata {
+  transform: translateX(40%);
+  font-size: xx-large;
+  font-weight: 600;
 }

@@ -4,7 +4,7 @@ import AppLayout from "../AppLayout/AppLayout";
 import Buttons from "../Buttons/Buttons";
 import { useNavigate } from "react-router-dom";
 import { createNewScenario, getScenario } from "../../Api/Api";
-import { enqueueSnackbar, useSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 function AddScenario() {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -27,16 +27,24 @@ function AddScenario() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const crossCheckForDuplicate = scenarioslist.filter((scenario) => {
+      return scenario.scenarioName === formData.scenarioName;
+    });
+    console.log(crossCheckForDuplicate);
+    if (crossCheckForDuplicate.length !== 0) {
+      enqueueSnackbar("You can't create a scenario name that already exists", {
+        variant: "error",
+      });
+    } else {
+      let formDataWithId = {
+        ...formData,
+        id: (scenarioslist.length || 0) + 1,
+      };
+      scenarioslist.push(formDataWithId);
+      await createNewScenario(formDataWithId);
 
-    let formDataWithId = {
-      ...formData,
-      id: (scenarioslist.length || 0) + 1,
-    };
-    scenarioslist.push(formDataWithId);
-    const res = await createNewScenario(formDataWithId);
-    
       enqueueSnackbar("Scenario added successfully", { variant: `success` });
-    
+    }
   };
   useEffect(() => {
     const handleapi = async () => {

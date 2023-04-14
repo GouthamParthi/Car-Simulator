@@ -23,8 +23,12 @@ function Table({
         <table className={styles.table}>
           <thead>
             <tr>
-              {columns.map((head) => {
-                return <th className={styles.header}>{head.header}</th>;
+              {columns.map((head, i) => {
+                return (
+                  <th className={styles.header} key={i}>
+                    {head.header}
+                  </th>
+                );
               })}
               {addButton ? (
                 <th className={styles.header}>Add Vehicle</th>
@@ -37,12 +41,12 @@ function Table({
             <tbody className={styles.tableBody}>
               {data.map((row) => (
                 <tr>
-                  {columns.map((col) => (
+                  {columns.map((col, i) => (
                     <>
                       {row.isEdit &&
                       col.field !== "id" &&
                       col.field !== "vehicles" ? (
-                        <td className={styles.tableBodydata}>
+                        <td className={styles.tableBodydata} key={i}>
                           <form>
                             <input
                               name={col.field}
@@ -58,7 +62,7 @@ function Table({
                           </form>
                         </td>
                       ) : (
-                        <td className={styles.tableBodydata}>
+                        <td className={styles.tableBodydata} key={i}>
                           {col.field === "vehicles"
                             ? row[col.field].length
                             : row[col.field]}
@@ -116,7 +120,13 @@ function Table({
               ))}
             </tbody>
           ) : (
-            <h2 style={{ color: "var(--color-white)" }}>No {name} to show</h2>
+            <tr
+              style={{ color: "var(--color-white)", textAlign: "center" }}
+              colspan="2"
+              className={styles.nodata}
+            >
+              No {name} to show
+            </tr>
           )}
         </table>
       </div>

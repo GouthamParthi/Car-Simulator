@@ -17,7 +17,7 @@ function Vehicles({ seletedScenario, simulationPlayState }) {
   return (
     <div className={styles.vehicles}>
       {seletedScenario
-        ? seletedScenario.vehicles.map((vehicle) => {
+        ? seletedScenario.vehicles.map((vehicle, i) => {
             return (
               <div
                 className={[
@@ -25,6 +25,7 @@ function Vehicles({ seletedScenario, simulationPlayState }) {
                   styles[vehicle.direction],
                   styles["simulationplay"],
                 ].join(" ")}
+                key={i}
                 style={{
                   translate: `${
                     vehicle.positionX <= 950 ? vehicle.positionX : 950

@@ -43,20 +43,21 @@ function AddVehicle() {
       };
     });
   };
-
+  const handleSelection = (e) => {
+    let seletedScenarioData = scenarioslist.filter((scenario) => {
+      return scenario.scenarioName === e.target.value;
+    });
+    setSelectedScenario(seletedScenarioData);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    let seletedScenarioData = scenarioslist.filter((scenario) => {
-      return scenario.scenarioName === seletedScenario;
-    });
     let formDataWithId = {
       ...formData,
-      id: (seletedScenarioData[0]?.vehicles.length || 0) + 1,
+      id: (seletedScenario[0]?.vehicles.length || 0) + 1,
     };
-    seletedScenarioData[0].vehicles.push(formDataWithId);
-    let scenarioId = seletedScenarioData[0].id;
-    let data = { vehicles: seletedScenarioData[0].vehicles };
+    seletedScenario[0].vehicles.push(formDataWithId);
+    let scenarioId = seletedScenario[0].id;
+    let data = { vehicles: seletedScenario[0].vehicles };
     const res = await addVehicle(scenarioId, data);
     if (res.status === 200) {
       enqueueSnackbar("Vehicle added successfully", { variant: `success` });
@@ -80,9 +81,7 @@ function AddVehicle() {
               <h4>Scenario</h4>
               <SelectionField
                 defaultPlaceholder="Select Scenario"
-                onOptionChangeHandler={(e) => {
-                  setSelectedScenario(e.target.value);
-                }}
+                onOptionChangeHandler={handleSelection}
                 options={scenarioslist}
                 objectProperty="scenarioName"
               />
