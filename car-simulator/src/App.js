@@ -23,13 +23,13 @@ function App() {
 }
 
 export default App;
-{
-  /* <SelectionField />
-<Table
-  data={tableData}
-  columns={columns}
-  editButton={true}
-  deleteButton={true}
-  addButton={true}
-/> */
-}
+// {
+//   /* <SelectionField />
+// <Table
+//   data={tableData}
+//   columns={columns}
+//   editButton={true}
+//   deleteButton={true}
+//   addButton={true}
+// /> */
+// }

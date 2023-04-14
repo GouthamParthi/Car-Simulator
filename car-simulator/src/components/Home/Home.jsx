@@ -5,7 +5,7 @@ import SelectionField from "../SelectionField/SelectionField";
 import Table from "../Table/Table";
 import PlayGround from "../PlayGround/PlayGround";
 import Buttons from "../Buttons/Buttons";
-import { addVehicle, getScenario } from "../../Api/Api";
+import { addVehicle, deleteVehicle, getScenario } from "../../Api/Api";
 function Home() {
   const [scenarioslist, setScenariosList] = useState([]);
   const [seletedScenario, setSelectedScenario] = useState([]);
@@ -68,7 +68,7 @@ function Home() {
       return vehicle.id !== vehicleId;
     });
     let scenarioId = seletedScenario.id;
-    await addVehicle(scenarioId, { vehicles: individualDelete });
+    await deleteVehicle(scenarioId, { vehicles: individualDelete });
     const getRes = await getScenario();
     setScenariosList(getRes);
     setSelectedScenario(getRes[seletedScenario.id - 1]);
@@ -77,6 +77,7 @@ function Home() {
     const handleapi = async () => {
       const res = await getScenario();
       setScenariosList(res);
+      // if db is empty then we dont want to set SelectionField
       if (res.length !== 0) {
         setSelectedScenario(res[0]);
       }

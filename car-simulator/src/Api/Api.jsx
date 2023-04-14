@@ -11,9 +11,9 @@ export async function getScenario() {
     alert("check the backend is running");
   }
 }
-export async function addVehicle(selectedScenario, data) {
+export async function addVehicle(selectedScenarioId, data) {
   try {
-    const Url = `${endpoint}/scenarios/${selectedScenario}`;
+    const Url = `${endpoint}/scenarios/${selectedScenarioId}`;
     const res = await axios.patch(Url, data);
     return res;
   } catch (e) {
@@ -38,15 +38,16 @@ export async function deleteScenario(id) {
     alert("check the backend is running");
   }
 }
-export async function deleteVehicle(id) {
+export async function deleteVehicle(selectedScenarioId, data) {
   try {
-    const Url = `${endpoint}/scenarios/${id}`;
-    const res = await axios.delete(Url);
+    const Url = `${endpoint}/scenarios/${selectedScenarioId}`;
+    const res = await axios.patch(Url, data);
     return res;
   } catch (e) {
     alert("check the backend is running");
   }
 }
+
 export async function saveScenario(id, data) {
   try {
     const Url = `${endpoint}/scenarios/${id}`;

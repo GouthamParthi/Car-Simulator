@@ -16,9 +16,6 @@
 .vehicles div:nth-child(odd) {
   background-color: var(--color-red);
 }
-/* .oneOfTheVehicles:hover {
-  transform: translate(100px, 10px);
-} */
 .downwards {
   animation-name: downwards;
 }

@@ -43,6 +43,7 @@ function Table({
                 <tr>
                   {columns.map((col, i) => (
                     <>
+                      {/* we dont want add edit to id and no of vehicles */}
                       {row.isEdit &&
                       col.field !== "id" &&
                       col.field !== "vehicles" ? (
