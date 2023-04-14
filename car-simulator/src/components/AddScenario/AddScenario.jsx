@@ -30,7 +30,6 @@ function AddScenario() {
     const crossCheckForDuplicate = scenarioslist.filter((scenario) => {
       return scenario.scenarioName === formData.scenarioName;
     });
-    console.log(crossCheckForDuplicate);
     if (crossCheckForDuplicate.length !== 0) {
       enqueueSnackbar("You can't create a scenario name that already exists", {
         variant: "error",

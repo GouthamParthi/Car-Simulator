@@ -6,7 +6,7 @@ function Buttons({ buttonName, buttonColor, onButtonClicked, type }) {
       className={[styles.buttons, styles[buttonColor]].join(" ")}
       onClick={onButtonClicked}
       type={type ? type : "button"}
-      value={buttonName.trim().toLowerCase()}
+      value={buttonName.toLowerCase()}
     >
       {buttonName}
     </button>

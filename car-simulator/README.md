@@ -9,7 +9,7 @@ After installing ,add new terminal using add icon or ctrl+shift+@
 direct to Car-Simulator\car-simulator\Backend>
 
 "cd Backend " in car-simulator directory
-Run "npm start" it will start the json server
+Run "npm start" it will start the json server in 3004 port
 then back to car-simulator directory again Run "npm start" it will open live demo in 3000 port
 
 Car Simulation project is fully desktop apllication.user can add Scenarios and vehicles that belongs to.there are four pages which directs using React Router.
